@@ -13,7 +13,9 @@ def browser(request):
 
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language})
-    browser = webdriver.Firefox()
+    browser = webdriver.Remote(command_executor = "http://localhost:4444/wd/hub", desired_capabilities={'browserName': 'firefox', 'javascriptEnabled': True})
+
+
     browser.maximize_window()
 
     yield browser
