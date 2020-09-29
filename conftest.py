@@ -16,9 +16,9 @@ def browser():
     # for Selenium Grid
     # capabilities = DesiredCapabilities.FIREFOX
     # remote_server = 'http://192.168.170.14:4445/wd/hub'
-    # browser = webdriver.Remote(command_executor='http://192.168.170.14:4445/wd/hub', desired_capabilities={'browserName': 'firefox', 'platform': 'LINUX'})
-    browser = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
-                               desired_capabilities={'browserName': 'chrome'})
+    browser = webdriver.Remote(command_executor='http://192.168.170.14:4445/wd/hub',
+                               desired_capabilities={'browserName': 'chrome', 'platform': 'LINUX'})
+
 
     browser.maximize_window()
 
