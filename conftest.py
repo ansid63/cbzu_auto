@@ -13,11 +13,12 @@ def browser():
     # language = request.config.getoption("language")
     # options = Options()
     # options.add_experimental_option('prefs', {'intl.accept_languages': language})
+    # for Selenium Grid
     # capabilities = DesiredCapabilities.FIREFOX
     # remote_server = 'http://192.168.170.14:4445/wd/hub'
     # browser = webdriver.Remote(command_executor='http://192.168.170.14:4445/wd/hub', desired_capabilities={'browserName': 'firefox', 'platform': 'LINUX'})
     browser = webdriver.Remote(command_executor='http://localhost:4444/wd/hub',
-                               desired_capabilities={'browserName': 'firefox'})
+                               desired_capabilities={'browserName': 'chrome'})
 
     browser.maximize_window()
 
