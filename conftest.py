@@ -9,10 +9,10 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def browser(request):
-    language = request.config.getoption("language")
+    #language = request.config.getoption("language")
 
-    options = Options()
-    options.add_experimental_option('prefs', {'intl.accept_languages': language})
+    #options = Options()
+    #options.add_experimental_option('prefs', {'intl.accept_languages': language})
     browser = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', desired_capabilities={'browserName': 'chrome', 'javascriptEnabled': True})
 
 
