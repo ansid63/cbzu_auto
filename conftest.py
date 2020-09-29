@@ -9,10 +9,10 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="function")
-def browser(request):
-    language = request.config.getoption("language")
-    options = Options()
-    options.add_experimental_option('prefs', {'intl.accept_languages': language})
+def browser():
+    # language = request.config.getoption("language")
+    # options = Options()
+    # options.add_experimental_option('prefs', {'intl.accept_languages': language})
     capabilities = DesiredCapabilities.CHROME
     remote_server = 'http://localhost:4444/wd/hub'
     browser = webdriver.Remote(remote_server, capabilities)
