@@ -13,7 +13,7 @@ def browser(request):
 
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': language})
-    browser = webdriver.Remote(command_executor='http://192.168.168.63:4444/wd/hub', desired_capabilities={'browserName': 'chrome', 'javascriptEnabled': True})
+    browser = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', desired_capabilities={'browserName': 'chrome', 'javascriptEnabled': True})
 
 
     browser.maximize_window()
