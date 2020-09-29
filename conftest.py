@@ -13,10 +13,9 @@ def browser():
     # language = request.config.getoption("language")
     # options = Options()
     # options.add_experimental_option('prefs', {'intl.accept_languages': language})
-    capabilities = DesiredCapabilities.CHROME
-    remote_server = 'http://localhost:4444/wd/hub'
+    capabilities = DesiredCapabilities.FIREFOX
+    remote_server = 'http://192.168.170.14:4445/wd/hub'
     browser = webdriver.Remote(remote_server, capabilities)
-
 
     browser.maximize_window()
 
