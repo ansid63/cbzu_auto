@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import BasePageLocators
-from data.data import TestData
+from .data import TestData
 
 
 class MainPage(BasePage):

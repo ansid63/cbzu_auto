@@ -4,7 +4,7 @@ from selenium import webdriver
 
 @pytest.fixture(scope="function")
 def browser():
-    # browser = webdriver.Chrome() # for local launch
+    # browser = webdriver.Chrome()  # for local launch
 
     chrome_options = webdriver.ChromeOptions()
     browser = webdriver.Remote(
