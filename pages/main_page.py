@@ -1,20 +1,16 @@
 from .base_page import BasePage
 from .locators import BasePageLocators
-from selenium.webdriver.support.ui import Select
-import time
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-
+from data.data import TestData
 
 
 class MainPage(BasePage):
     def fill_value_positive(self):
         fill_age = self.browser.find_element(*BasePageLocators.AGE)
-        fill_age.send_keys(*BasePageLocators.POS_AGE)
+        fill_age.send_keys(TestData.POS_AGE)
         fill_height = self.browser.find_element(*BasePageLocators.HEIGHT)
-        fill_height.send_keys(*BasePageLocators.POS_HEIGHT)
+        fill_height.send_keys(TestData.POS_HEIGHT)
         fill_weight = self.browser.find_element(*BasePageLocators.WEIGHT)
-        fill_weight.send_keys(*BasePageLocators.POS_WEIGHT)
+        fill_weight.send_keys(TestData.POS_WEIGHT)
 
         gender_choose = self.browser.find_element(*BasePageLocators.GENDER)
         gender_choose.click()
@@ -28,11 +24,11 @@ class MainPage(BasePage):
 
     def fill_value_negative(self):
         fill_age = self.browser.find_element(*BasePageLocators.AGE)
-        fill_age.send_keys(*BasePageLocators.POS_AGE)
+        fill_age.send_keys(TestData.POS_AGE)
         fill_height = self.browser.find_element(*BasePageLocators.HEIGHT)
-        fill_height.send_keys(*BasePageLocators.POS_HEIGHT)
+        fill_height.send_keys(TestData.POS_HEIGHT)
         fill_weight = self.browser.find_element(*BasePageLocators.WEIGHT)
-        fill_weight.send_keys(*BasePageLocators.NEGATIVE_WEIGHT)
+        fill_weight.send_keys(TestData.NEGATIVE_WEIGHT)
 
         gender_choose = self.browser.find_element(*BasePageLocators.GENDER)
         gender_choose.click()

@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators():
+class BasePageLocators:
     #locators for value
     AGE = (By.NAME, "ago")
     HEIGHT = (By.NAME, "rost")
@@ -14,16 +14,3 @@ class BasePageLocators():
     #check fields
     NUMBER_CHARIS_BENEDIKT = (By.XPATH, "//table[@id='res']/tbody/tr[2]/td[2]/b")
     NUMBER_BAZAL_META = (By.XPATH, "//table[@id='res']/tbody/tr[3]/td[2]/b")
-
-
-    #value for positive test
-    POS_AGE = "37"
-    POS_HEIGHT = "185"
-    POS_WEIGHT = "80"
-    NEGATIVE_WEIGHT = "-80"
-
-
-
-
-
-
