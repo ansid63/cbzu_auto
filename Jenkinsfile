@@ -26,8 +26,10 @@ pipeline {
           script {
               docker.image('aerokube/selenoid:1.10.4').withRun('-p 4444:4444 -v /run/docker.sock:/var/run/docker.sock -v $PWD:/etc/selenoid/',
                 '-service-startup-timeout 120s -session-attempt-timeout 120s -session-delete-timeout 120s -timeout 600s -limit 4') { c ->
-                  docker.image('python-web-tests').inside {
+                  docker.image('python-web-tests'){
+                    withEnv(["PYTHON_HOME=${DOCKER_PYTHON_HOME}"]) {
                         sh "pytest -n 2 --reruns 1 ${CMD_PARAMS}"
+                    }
                   }
                }
             }
