@@ -1,18 +1,21 @@
 pipeline {
+  agent any
   stages {
     stage("Build image") {
       steps {
         catchError {
-          checkout scm
-          docker.build("python-web-tests:1.0", ".")
+          script {
+            docker.build("python-web-tests", "-f Dockerfile .")
           }
+         }
       }
     }
     stage('Pull browser') {
       steps {
         catchError {
-          checkout scm
-          docker.image('selenoid/chrome:92.0').pull()
+          script {
+          docker.image('selenoid/chrome:92.0')
+          }
         }
       }
     }
