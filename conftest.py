@@ -24,7 +24,7 @@ def browser():
 
     chrome_options = webdriver.ChromeOptions()
     browser = webdriver.Remote(
-        command_executor='127.0.0.1:4444/wd/hub',
+        command_executor='selenoid:4444/wd/hub',
         desired_capabilities={'browserName': 'chrome',
                               # 'enableVNC': True,
                               'version': '92.0'},
