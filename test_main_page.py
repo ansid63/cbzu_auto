@@ -5,8 +5,8 @@ import time
 
 
 def test_positive_value(browser):
-    link = "http://musclegain.ru/calculator_bzu.html"
-    new_user = MainPage(browser, link)
+    # link = "http://musclegain.ru/calculator_bzu.html"
+    new_user = MainPage(browser)
     new_user.open()
 
     #input info about user
@@ -17,8 +17,8 @@ def test_positive_value(browser):
     new_user.check_numbers()
 
 def test_negative_value(browser):
-    link = "http://musclegain.ru/calculator_bzu.html"
-    new_user = MainPage(browser, link)
+    # link = "http://musclegain.ru/calculator_bzu.html"
+    new_user = MainPage(browser)
     new_user.open()
 
     # input info about user
