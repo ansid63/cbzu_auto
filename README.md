@@ -7,3 +7,5 @@
 >Additional modules xdist and rerunfailures launch tests in 4 threads with 1 rerun on failure. 
 
 > Allure create reports for running tests
+
+Selenoid useful for launching browsers independently, full information you could find in [documentation](https://aerokube.com/selenoid/latest/)
