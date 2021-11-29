@@ -14,3 +14,5 @@ wcwidth==0.1.8
 zipp==1.0.0
 pytest-xdist==2.4.0
 pytest-rerunfailures==10.2
+allure-pytest==2.9.45
+allure-python-commons==2.9.45
