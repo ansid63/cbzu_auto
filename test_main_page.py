@@ -17,7 +17,6 @@ class TestCbzu:
         # check field
         new_user.check_numbers()
 
-
     @allure.title("Негативный тест расчёта КБЖУ")
     def test_negative_value(self, browser):
         new_user = MainPage(browser)
