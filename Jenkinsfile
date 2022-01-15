@@ -19,7 +19,15 @@ pipeline {
         }
       }
     }
-
+    stage('Add Selenoid-UI') {
+        steps {
+           catchError {
+              script {
+      	    docker.image('aerokube/selenoid-ui:1.10.4').withRun('--name selenoid-ui --link selenoid -p 8888:8080 --selenoid-uri http://selenoid:4444)
+      	      }
+           }
+        }
+    }
     stage('Run tests') {
       steps {
         catchError {
