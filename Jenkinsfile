@@ -35,7 +35,7 @@ pipeline {
             }
           }
         }
-
+      }
     }
     stage('Reports') {
       steps {
