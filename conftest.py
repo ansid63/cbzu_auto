@@ -10,7 +10,7 @@ def browser():
     browser = webdriver.Remote(
         command_executor='http://selenoid:4444/wd/hub',
         desired_capabilities={'browserName': 'chrome',
-                              # 'enableVNC': True,
+                              'enableVNC': True,
                               'version': '92.0'},
         options=chrome_options)
 
