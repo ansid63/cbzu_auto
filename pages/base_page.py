@@ -10,6 +10,6 @@ class BasePage:
     def open(self):
         return self.browser.get(self.base_url)
 
-    @allure.step("Нажать на кнопку {locator_name}")
-    def click_element(self, search_method, locator, locator_name):
-        self.browser.find_element(search_method, locator).click()
+    @allure.step("Нажать на кнопку {element}")
+    def click_element(self, element):
+        self.browser.find_element(element.search_method, element.locator).click()
