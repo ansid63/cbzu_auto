@@ -20,7 +20,7 @@ class BasePage:
         wait = WebDriverWait(self.browser, timeout)
         wait.until(EC.element_to_be_clickable((element.search_method, element.locator)))
 
-    @allure.step("Дождаться состояния появления элемента {element} в течении {timeout} сек.")
+    @allure.step("Дождаться появления элемента {element} в течении {timeout} сек.")
     def wait_element_visible(self, element, timeout):
         wait = WebDriverWait(self.browser, timeout)
         wait.until(EC.visibility_of_element_located((element.search_method, element.locator)))
