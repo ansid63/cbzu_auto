@@ -1,7 +1,8 @@
 import allure
 from .base_page import BasePage
 from .data import TestData
-from .locators import *
+from .locators import AGE_FIELD, HEIGHT, WEIGHT, GENDER, TYPE, VOLUME_ACTION, SUBMIT, NUMBER_BAZAL_META, \
+    NUMBER_CHARIS_BENEDIKT
 
 
 class MainPage(BasePage):
@@ -10,6 +11,7 @@ class MainPage(BasePage):
         self.browser.find_element(element.search_method, element.locator).send_keys(text)
 
     def fill_value_positive(self):
+        self.wait_element_visible(AGE_FIELD, 2)
         self.send_text_to_field(AGE_FIELD, TestData.POS_AGE)
         self.send_text_to_field(HEIGHT, TestData.POS_HEIGHT)
         self.send_text_to_field(WEIGHT, TestData.POS_WEIGHT)
@@ -17,9 +19,11 @@ class MainPage(BasePage):
         self.click_element(GENDER)
         self.click_element(TYPE)
         self.click_element(VOLUME_ACTION)
+        self.wait_element_clickable(SUBMIT, 2)
         self.click_element(SUBMIT)
 
     def fill_value_negative(self):
+        self.wait_element_visible(AGE_FIELD, 2)
         self.send_text_to_field(AGE_FIELD, TestData.POS_AGE)
         self.send_text_to_field(HEIGHT, TestData.POS_HEIGHT)
         self.send_text_to_field(WEIGHT, TestData.NEGATIVE_WEIGHT)
@@ -27,6 +31,7 @@ class MainPage(BasePage):
         self.click_element(GENDER)
         self.click_element(TYPE)
         self.click_element(VOLUME_ACTION)
+        self.wait_element_clickable(SUBMIT, 2)
         self.click_element(SUBMIT)
 
     def check_numbers(self):
